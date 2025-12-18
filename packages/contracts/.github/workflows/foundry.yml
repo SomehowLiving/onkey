@@ -1,0 +1,21 @@
+name: Foundry
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: foundry-actions/foundry-toolchain@v1
+      - name: Install dependencies
+        run: |
+          forge install account-abstraction/account-abstraction@v0.6.0 --no-commit
+          forge install OpenZeppelin/openzeppelin-contracts@v5.0.2 --no-commit
+      - name: Run tests
+        run: forge test
+

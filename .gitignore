@@ -1,0 +1,81 @@
+# ======================
+# Dependencies
+# ======================
+node_modules/
+.pnp
+.pnp.js
+
+# ======================
+# Build outputs
+# ======================
+dist/
+build/
+.next/
+out/
+*.tsbuildinfo
+
+# ======================
+# Environment variables (SECRETS)
+# ======================
+.env
+.env.*
+!.env.example
+
+# ======================
+# Logs
+# ======================
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# ======================
+# OS junk
+# ======================
+.DS_Store
+Thumbs.db
+
+# ======================
+# IDE / Editor
+# ======================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ======================
+# Testing / Coverage
+# ======================
+coverage/
+.nyc_output/
+
+# ======================
+# Docker
+# ======================
+docker-compose.override.yml
+
+# ======================
+# Prisma / Databases
+# ======================
+**/dev.db
+**/*.db
+**/*.db-journal
+prisma/migrations/
+
+# ======================
+# Foundry
+# ======================
+cache/
+broadcast/
+
+# ======================
+# Turbo
+# ======================
+.turbo/
+**/.turbo/
+*.log
+
+# ======================
+# Large / binary files
+# ======================
+*.mp4

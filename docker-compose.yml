@@ -1,0 +1,79 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: onkey-postgres
+    environment:
+      POSTGRES_DB: onkey
+      POSTGRES_USER: onkey
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-onkey_password}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U onkey"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: onkey-redis
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: .
+      dockerfile: packages/backend/Dockerfile
+    container_name: onkey-backend
+    environment:
+      DATABASE_URL: postgresql://onkey:${DB_PASSWORD:-onkey_password}@postgres:5432/onkey
+      REDIS_URL: redis://redis:6379
+      JWT_SECRET: ${JWT_SECRET:-your-secret-key-min-32-chars-change-in-production}
+      ENCRYPTION_KEY: ${ENCRYPTION_KEY:-0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef}
+      PORT: 3001
+      EMAIL_HOST: ${EMAIL_HOST:-smtp.resend.com}
+      EMAIL_PORT: ${EMAIL_PORT:-587}
+      EMAIL_USER: ${EMAIL_USER:-resend}
+      EMAIL_PASS: ${EMAIL_PASS}
+      EMAIL_FROM: ${EMAIL_FROM:-auth@onkey.dev}
+      NODE_ENV: production
+    ports:
+      - "3001:3001"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  mpc:
+    build:
+      context: .
+      dockerfile: packages/mpc/Dockerfile
+    container_name: onkey-mpc
+    environment:
+      REDIS_URL: redis://redis:6379
+      LIT_NETWORK: ${LIT_NETWORK:-cayenne}
+      USER_ENCRYPTION_KEY: ${USER_ENCRYPTION_KEY:-0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef}
+      SERVER_ENCRYPTION_KEY: ${SERVER_ENCRYPTION_KEY:-fedcba9876543210fedcba9876543210fedcba9876543210fedcba9876543210}
+      NODE_ENV: production
+    depends_on:
+      redis:
+        condition: service_healthy
+
+volumes:
+  postgres_data:
+
