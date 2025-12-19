@@ -86,6 +86,8 @@ onkey/
 
 ## 🛠️ Usage
 
+**Quick developer guide:** `ONKEY_DEVELOPER_DOCUMENTATION.md` (concise root-level guide for SDK + backend setup)
+
 ### Frontend SDK
 
 Install the SDK in your React/Next.js app:

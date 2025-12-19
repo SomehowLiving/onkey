@@ -1,10 +1,11 @@
 {
   "name": "@onkey/sdk",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "files": ["dist"], 
   "exports": {
     ".": {
       "import": "./dist/index.js",
@@ -15,7 +16,10 @@
     "build": "tsc",
     "dev": "tsc --watch",
     "lint": "eslint src --ext .ts,.tsx",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "docs:typed": "typedoc --out ../../docs/typed src --tsconfig tsconfig.json --excludePrivate --excludeExternals",
+    "docs:prepare": "pnpm build && pnpm docs:typed",
+    "prepublishOnly": "pnpm build"
   },
   "dependencies": {
     "permissionless": "^0.2.56",
@@ -25,7 +29,8 @@
   "devDependencies": {
     "@types/node": "^20.11.0",
     "@types/react": "^18.2.0",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "typedoc": "^0.25.0"
   },
   "peerDependencies": {
     "react": "^18.0.0"

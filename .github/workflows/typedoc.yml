@@ -1,0 +1,34 @@
+name: Generate TypeDoc
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'packages/sdk/**'
+
+jobs:
+  typedoc:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Install deps
+        run: pnpm install -w
+
+      - name: Build SDK
+        run: pnpm --filter ./packages/sdk build
+
+      - name: Generate TypeDoc
+        run: pnpm --filter ./packages/sdk docs:typed
+
+      - name: Upload TypeDoc artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: typedoc
+          path: docs/typed

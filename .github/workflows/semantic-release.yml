@@ -1,0 +1,30 @@
+name: SDK semantic-release
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  release:
+    if: ${{ secrets.SEMANTIC_RELEASE == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Install dependencies
+        run: pnpm install -w
+
+      - name: Build SDK
+        run: pnpm --filter ./packages/sdk build
+
+      - name: Run semantic-release for SDK
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: pnpm dlx semantic-release --cwd packages/sdk
