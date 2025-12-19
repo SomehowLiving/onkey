@@ -8,6 +8,7 @@ permissions:
   contents: write
   issues: write
   pull-requests: write
+  id-token: write
 
 jobs:
   release:
@@ -22,31 +23,25 @@ jobs:
         env:
           SEMANTIC_RELEASE: ${{ secrets.SEMANTIC_RELEASE }}
 
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 22
           registry-url: https://registry.npmjs.org
           scope: '@onkey'
           always-auth: true
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v2
         with:
           version: 8
 
-      - name: Install dependencies
-        run: pnpm install -w
+      - run: pnpm install -w
 
-      - name: Build SDK
-        run: pnpm --filter ./packages/sdk build
+      - run: pnpm --filter ./packages/sdk build
 
       - name: Run semantic-release for SDK
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: pnpm dlx semantic-release --cwd packages/sdk
-
