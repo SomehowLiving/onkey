@@ -6,9 +6,17 @@ on:
 
 jobs:
   release:
-    if: ${{ secrets.SEMANTIC_RELEASE == 'true' }}
     runs-on: ubuntu-latest
     steps:
+      - name: Check SEMANTIC_RELEASE flag
+        run: |
+          if [ "${SEMANTIC_RELEASE}" != "true" ]; then
+            echo "Semantic release disabled"
+            exit 0
+          fi
+        env:
+          SEMANTIC_RELEASE: ${{ secrets.SEMANTIC_RELEASE }}
+
       - name: Checkout repository
         uses: actions/checkout@v4
 
