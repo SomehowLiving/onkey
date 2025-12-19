@@ -29,7 +29,7 @@ export default function Home() {
     bundlerUrl: process.env.NEXT_PUBLIC_BUNDLER_URL || '',
     paymasterUrl: process.env.NEXT_PUBLIC_PAYMASTER_URL || '',
     factoryAddress: (process.env.NEXT_PUBLIC_FACTORY_ADDRESS || '0x0000000000000000000000000000000000000000') as `0x${string}`,
-    entryPointAddress: ('0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789') as `0x${string}`,
+    entryPointAddress: ('0x0000000071727De22E5E9d8BAf0edAc6f37da032') as `0x${string}`,
   } as any;
 
   return (

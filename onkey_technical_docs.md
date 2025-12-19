@@ -589,7 +589,7 @@ address = CREATE2(factory, salt, initCode)
 ```solidity
 OnkeyAccount (inherits Kernel v2)
 ├── Owner: MPC public key
-├── EntryPoint: 0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789
+├── EntryPoint: 0x0000000071727De22E5E9d8BAf0edAc6f37da032
 ├── Modules:
 │   ├── Validator: ECDSA validator (MPC signatures)
 │   ├── Executor: Default executor
@@ -844,7 +844,7 @@ LIT_NETWORK=habanero  # mainnet
 
 # Smart Contracts (deploy first)
 FACTORY_ADDRESS=0xYourDeployedFactoryAddress
-ENTRYPOINT_ADDRESS=0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789
+ENTRYPOINT_ADDRESS=0x0000000071727De22E5E9d8BAf0edAc6f37da032
 ```
 
 ### Deploy Smart Contracts

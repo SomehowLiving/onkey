@@ -7,7 +7,7 @@ import {IEntryPoint} from "@account-abstraction/contracts/interfaces/IEntryPoint
 
 contract DeployScript is Script {
     // Base Sepolia EntryPoint address (ERC-4337 v0.6)
-    // address constant ENTRYPOINT_ADDRESS = 0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789;
+    // address constant ENTRYPOINT_ADDRESS = 0x0000000071727De22E5E9d8BAf0edAc6f37da032;
 
     // Base Sepolia EntryPoint address (ERC-4337 v0.7)
     address constant ENTRYPOINT_ADDRESS = 0x0000000071727De22E5E9d8BAf0edAc6f37da032;
