@@ -4,7 +4,11 @@
     ["@semantic-release/commit-analyzer", { "preset": "conventionalcommits" }],
     ["@semantic-release/release-notes-generator", { "preset": "conventionalcommits" }],
     "@semantic-release/changelog",
-    ["@semantic-release/npm", { "npmPublish": true }],
+    ["@semantic-release/npm", { 
+        "npmPublish": true,
+        "pkgRoot": "packages/sdk" 
+        }
+    ],
     "@semantic-release/github"
   ]
 }
