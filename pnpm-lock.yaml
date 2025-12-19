@@ -14,6 +14,9 @@ importers:
       '@types/node':
         specifier: ^20.11.0
         version: 20.19.25
+      conventional-changelog-conventionalcommits:
+        specifier: ^6.0.0
+        version: 6.1.0
       prettier:
         specifier: ^3.2.5
         version: 3.7.4
