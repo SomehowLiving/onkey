@@ -162,21 +162,12 @@ importers:
         specifier: 2.21.24
         version: 2.21.24(typescript@5.9.3)(zod@3.25.76)
     devDependencies:
-      '@semantic-release/changelog':
-        specifier: ^6.0.0
-        version: 6.0.3(semantic-release@25.0.2)
       '@types/node':
         specifier: ^20.11.0
         version: 20.19.25
       '@types/react':
         specifier: ^18.2.0
         version: 18.3.27
-      conventional-changelog-conventionalcommits:
-        specifier: ^6.0.0
-        version: 6.1.0
-      semantic-release:
-        specifier: ^25.0.2
-        version: 25.0.2(typescript@5.9.3)
       typedoc:
         specifier: ^0.25.0
         version: 0.25.13(typescript@5.9.3)
@@ -2414,19 +2405,6 @@ packages:
     resolution: {integrity: sha512-831qok9r2t8AlxLko40y2ebgSDhenenCatLVeW/uBtnHPyhHOvG0C7TvfgecV+wHzIm5KUICgzmVpWS+IMEAeg==}
     dev: true
 
-  /@semantic-release/changelog@6.0.3(semantic-release@25.0.2):
-    resolution: {integrity: sha512-dZuR5qByyfe3Y03TpmCvAxCyTnp7r5XwtHRf/8vD9EAn4ZWbavUX8adMtXYzE86EVh0gyLA7lm5yW4IV30XUag==}
-    engines: {node: '>=14.17'}
-    peerDependencies:
-      semantic-release: '>=18.0.0'
-    dependencies:
-      '@semantic-release/error': 3.0.0
-      aggregate-error: 3.1.0
-      fs-extra: 11.3.3
-      lodash: 4.17.21
-      semantic-release: 25.0.2(typescript@5.9.3)
-    dev: true
-
   /@semantic-release/commit-analyzer@13.0.1(semantic-release@25.0.2):
     resolution: {integrity: sha512-wdnBPHKkr9HhNhXOhZD5a2LNl91+hs8CC2vsAVYxtZH3y0dV3wKn+uZSN61rdJQZ8EGxzWB3inWocBHV9+u/CQ==}
     engines: {node: '>=20.8.1'}
@@ -2444,11 +2422,6 @@ packages:
       semantic-release: 25.0.2(typescript@5.9.3)
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  /@semantic-release/error@3.0.0:
-    resolution: {integrity: sha512-5hiM4Un+tpl4cKw3lV4UgzJj+SmfNIDCLLw0TepzQxz9ZGV5ixnqkzIVF+3tp0ZHgcMKE+VNGHJjEeyFG2dcSw==}
-    engines: {node: '>=14.17'}
     dev: true
 
   /@semantic-release/error@4.0.0:
@@ -5280,10 +5253,6 @@ packages:
 
   /lodash.uniqby@4.7.0:
     resolution: {integrity: sha512-e/zcLx6CSbmaEgFHCA7BnoQKyCtKMxnuWrJygbwPs/AIn+IMKl66L8/s+wBUn5LRw2pZx3bUHibiV1b6aTWIww==}
-    dev: true
-
-  /lodash@4.17.21:
-    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
     dev: true
 
   /long@4.0.0:
