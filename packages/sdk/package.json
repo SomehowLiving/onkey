@@ -1,15 +1,17 @@
 {
   "name": "@onkey/sdk",
-  "version": "0.1.6",
+  "version": "0.1.8",
   "private": false,
   "publishConfig": {
     "access": "public"
   },
-  "description": "Self-hosted Web3 authentication SDK", 
+  "description": "Self-hosted Web3 authentication SDK",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "files": ["dist"], 
+  "files": [
+    "dist"
+  ],
   "exports": {
     ".": {
       "import": "./dist/index.js",
@@ -40,4 +42,3 @@
     "react": "^18.0.0"
   }
 }
-
