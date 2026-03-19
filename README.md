@@ -4,7 +4,7 @@
 
 ![Onkey Logo](https://img.shields.io/badge/Onkey-Web3%20Auth-blue?style=flat-square)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen)](https://github.com/yourusername/onkey)
+[![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen)](https://github.com/somehowliving/onkey)
 [![Discord](https://img.shields.io/badge/Discord-Community-7289da?logo=discord)](https://discord.gg/onkey)
 
 **The open-source alternative to Privy. Email auth + smart wallets that you own.**
@@ -63,7 +63,7 @@ Web2 got it right: email login works. Web3 needs that simplicity **without** sac
 ### 1. Clone & Install
 
 ```bash
-git clone https://github.com/yourusername/onkey.git
+git clone https://github.com/somehowliving/onkey.git
 cd onkey
 pnpm install
 ```
@@ -102,9 +102,10 @@ pnpm dev
 
 ## 🎬 Live Demo
 
-👉 **[Demo App](https://onkey-demo.vercel.app)** — Try email login + send transactions  
+👉 **[SDK]([https://github.com/somehowlivng/onkey](https://www.npmjs.com/package/@onkey/sdk))** — Download the sdk here
+👉 **[Demo App]([https://onkey-demo.vercel.app](https://x.com/pnyk05/status/2001977326377341013))** — Try email login + send transactions  
 👉 **[Documentation](https://docs.onkey.dev)** — Full developer guide  
-👉 **[GitHub Repo](https://github.com/yourusername/onkey)** — Source code  
+👉 **[GitHub Repo](https://github.com/somehowlivng/onkey)** — Source code  
 
 ---
 
@@ -432,7 +433,7 @@ We welcome contributions! Help us build the most user-friendly Web3 auth.
 
 ```bash
 # 1. Fork & clone
-git clone https://github.com/yourusername/onkey.git
+git clone https://github.com/somehowliving/onkey.git
 
 # 2. Create feature branch
 git checkout -b feat/amazing-feature
@@ -514,9 +515,9 @@ MIT © 2025 Onkey Contributors
 ## 🌐 Community
 
 - **Discord**: [Join Community](https://discord.gg/onkey) — Get help, discuss features
-- **GitHub Discussions**: [Discussions](https://github.com/yourusername/onkey/discussions)
-- **Twitter/X**: [@OnkeyAuth](https://twitter.com/onkeyauth) — Updates & announcements
-- **Email**: hello@onkey.dev — Direct contact
+- **GitHub Discussions**: [Discussions](https://github.com/somehowliving/onkey/discussions)
+- **Twitter/X**: [@OnkeyAuth](https://twitter.com/pnyk05) — Updates & announcements
+- **Email**: nidhiyp05@gmail.com — Direct contact
 
 ---
 
@@ -563,8 +564,8 @@ Web3 adoption is blocked by UX. Users want Web2 simplicity but Web3 doesn't have
 
 **Built with ❤️ for Web3**
 
-![Stars](https://img.shields.io/github/stars/yourusername/onkey?style=social)
-![Forks](https://img.shields.io/github/forks/yourusername/onkey?style=social)
-![Contributors](https://img.shields.io/github/contributors/yourusername/onkey)
+![Stars](https://img.shields.io/github/stars/somehowliving/onkey?style=social)
+![Forks](https://img.shields.io/github/forks/somehowliving/onkey?style=social)
+![Contributors](https://img.shields.io/github/contributors/somehowliving/onkey)
 
 </div>
